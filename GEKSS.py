@@ -31,9 +31,9 @@ s = input("""What do you want to do today?
 s = int(s)
 t = 0
 m = 3
-while t < 3:
+while t < m:
      t += 1
-     if s == 1 or s == 2 or s== 3:
+     if s != 1 or s != 2 or s != 3:
           print("Sorry, this is invalid.")
      else:
             s = int(s)
