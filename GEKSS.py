@@ -1,245 +1,394 @@
-print("""Welcome to GEKSS Quizzer!
-      Your Quizzing pal for General Knowledge, Space and Sciences!
-    """)
 
-n = input("What is your name? ")
+# This is where we start our general Knowledge questions
+def cricket(player_name):
+    print(f"Welcome to the Cricket Section, {player_name}.")    
 
-def introage():
-    xage = input(f"""This is a universal site with no age limits or such stuff, but {n},
-      it would help us in our info if you could state your age.
-      """)
-    return xage
+    # Here is the list of questions, options and the right answer
+    # If you want to add more questions, then follow the same format as the below questions
 
-a = introage()
+    questions = [
+        {
+            "question": "Q1. When did India first win the T20 World Cup?",
+            "options": ["2007", "2011", "1983", "2017"],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q2. Which England bowler recently retired after taking 700+ test wickets?",
+            "options": [
+                "Jimmie Anderson",
+                "James Anderson",
+                "Stuart Broad",
+                "Ben Stokes",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q3. Which cricketer made a remarkable recovery after a severe accident in December 2022?",
+            "options": [
+                "K Lokesh Rahul",
+                "Rishabh Rajendra Pant",
+                "Shreyas Iyer",
+                "Mahendra Singh Dhoni",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q4. Who bowled the 'ball of the century' in the 1993-94 Ashes test?",
+            "options": [
+                "Ravichandran Ashwin",
+                "Adam Zampa",
+                "Mark Waugh",
+                "Shane Warne",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q5. Which IPL team's ex-captain said he wouldn't drop out of the race until he leveled with Rohit Sharma preceding 2022?",
+            "options": [
+                "Shreyas Iyer",
+                "Virat Kohli",
+                "Pat Cummins",
+                "Mahendra Singh Dhoni",
+            ],
+            "correct_answer": 4,
+        },
+    ]
 
-while not a.isdigit():
-    print("Sorry, your age is not in integers")
-    a = introage()
-
-a = int(a)
-print("""Cool!
-      Here we go!
-      """)
-print("""The rules are pretty simple.
-      A question will be printed on your screen where you have to type 1, for the first option, 2 for the second and so.
-      """)
-
-t = 0
-m = 3
-while t < m:
-    s = input("""What do you want to do today?
-          1. General Knowledge
-          2. Science
-          3. Space
-          """)
-    
-    if not s.isdigit():
-        print("Sorry, that's not a valid number.")
-        t += 1
-        continue
-
-    s = int(s)
-    if s in [1, 2, 3]:
-        if s == 1:
-            print("You seem to be interested in the General Knowledge Section.")
-            print("It consists of 2 sub-sections - Cricket and Current Affairs.")
-
-            print("Section - 1: Cricket")
-            q1 = input("""Q.1 The most trending thing in India is Cricket, and the recently concluded T20 World Cup.
-                        This is the second time India won the T20 World cup. When was the first time?
-                        1. 2007
-                        2. 2011
-                        3. 1983
-                        4. 2017                        
-                        """)
-            q2 = input("""Q.2 A few days ago, in the newspapers, there was this news of an England great bowler playing his last test against WI.
-                        He is also the only to get 700+ test wickets, grabbing this title last match.
-                        Who is this bowler?
-                        1. Jimmie Anderson
-                        2. James Anderson
-                        3. Stuart Broad
-                        4. Ben Stokes                        
-                        """)
-        
-
-            q3 = input(print("""Q.3 Back in December 2022, a currently star-cricketer suffered an accident.
-                            The accident was so severe, he had suffered a 90 degree turn in his leg and was rumoured not to be able to play cricket again.
-                            But he made his recovery, back to India's world cup team.
-                            Who is this player?
-                            1. K Lokesh Rahul
-                            2. Rishabh Rajendra Pant
-                            3. Shreyas Iyer
-                            4. Mahendra Singh Dhoni
-                            """))
-            q4 = input(print("""Q.4 A spinner is a batsman's delight. But not every spinner.
-                            There are a couple of spinners who have made stuff scary for batsmen with their wits.
-                            One of them is an Australian who played the 1993-94 Ashes test and bowled the ball of the century with a forty-five degree turn.
-                            Who was this great?
-                            1. Ravichandran Ashwin
-                            2. Adam Zampa
-                            3. Mark Waugh
-                            4. Shane Warne
-                            """))
-            q5 = input(print("""Q.5 Which IPL team's ex captain said that he would not drop out of the race until he levelled 
-                            fellow Rohit Sharma preceeding 2022?
-                            1. Shreyas Iyer
-                            2. Virat Kohli
-                            3. Pat Cummins
-                            4. Mahendra Singh Dhoni
-                            """))
-            print(f"""Congratulations {n}. 
-                You have completed the first Section of your General Knowledge quiz.
-                """)
-            print("Here are your results!")
-            q1 = int(q1)
-            if q1 == 1:
-                print("Your first answer was right!")
-            elif q1 != 1:
-                print(f"""Your first asnwer was wrong.
-                    The correct answer was option 1 - 2007
-                    """)
-            q2 = int(q2)
-            if q2 == 2:
-                print(f"""Your second answer was right""")
-            elif q2 != 2:
-                print(""" Your second answer was wrong.
-                    The right answer was option 2 - James Anderson""")
-            q3 = int(q3)
-            if q3 == 2:
-                print("Rishabh Rajendra Pant was the right answer!")
-            elif q3 != 2:
-                print("""Your Third answer was wrong!
-                    The right asnwer was option 2 - Rishabh Rajendra Pant
-                    """)
-            q4 = int(4)
-            if q4 == 4:
-                print("""Shane Warne is the right answer""")
-            elif q4 != 4:
-                print("""Your fourth answer was wrong.
-                    The right asnwer was option 4 - Shane Warne
-                    """)
-            q5 = int(q5)
-            if q5 == 4:
-                print("""Way to go!
-                    You got your last answer right!
-                    """)
-            elif q5 != 4:
-                print("""I am sorry, but the last answer was wrong.
-                    The right answer was Mahendra Singh Dhoni, after gaining
-                    his fourth IPL trophy.""")
-            print("Section - 2 : Current Affairs")
-            c1 = input(f"""Q1. Recently, there was a politcian in USA who was shot in his right ear.
-                        Who was he, and where was he shot?
-                        1. Joe Biden - Pentagon house.
-                        2. Kamala Harris - Chicago
-                        3. Donald Trump - Pennsylvenia
-                        4. Rishi Sunak - California
-
-                        """)
-            c2 = input(f"""Q.2 Which is one of the metals discovered in the Sutlej that is very rare?
-                        1. Titanium
-                        2. Tantalum
-                        3. Magnesium
-                        4. Magnesium
-                        """)
-            c3 = input(f"""Q.3 The current Olympics is taking place in Paris.
-                        When does Inida bid to host the olympics?
-                        1. 2036
-                        2. 2028
-                        3. 2040
-                        4. 2032
-                        """)
-            c4 = input(f"""Q.4 Which recent Prabhas starrer reached international greatness within a month of its release?
-                        1. Kalki 2898 AD
-                        2. Pushpa : The Rise
-                        3. Pushpa : The Rule
-                        4. Saaho
-                        """)
-            c5 = input(f"""Q.5 Who acted as Peter Parker for the first time in 2001?
-                        1. Tom Holland
-                        2. Andrew Garfield
-                        3. Robert Downy Jr.
-                        4. Tobey Maguire
-                        """)
-            print("With this, you have completed the second sub-section as well of the General Knowledge section.")
-            print("Here are your results!")
-            c1 == int(c1)
-            if c1 == 3:
-                    print("Your first answer was right!")
-            elif c1 != 3:
-                    print(f"""Your first answer was wrong.
-                        The right answer was option 3 - Donal Trump at Pennsylvenia
-                        """)
-            c2 == int(c2)
-            if c2 == 2:
-                    print("Your second answer - Tantalum - was right.")
-            elif c2 != 2:
-                    print(f"""The second answer was wrong.
-                        The right answer was option 2 - Tantalum
-                        """)
-            c3 == int(c3)
-            if c3 == 2:
-                    print(f"""Your third answer was right.""")
-            elif c3 != 2:
-                    print(f"""The third answer was wrong.
-                        The right answer was option 2 - again.
-                        """)
-            c4 == int(c4)
-            if c4 == 1:
-                    print(f"""Kalki 2898 AD is the right answer!""")
-            elif c4 != 1:
-                    print(f"""I am sorry, but the fourth answer was wrong.
-                        The right answer was option 1 - Kalki 2898 AD.
-                        """)
-            c5 == int(c5)
-            if c5 == 4:
-                    print(f"""The last answer - Tobey Maguire - was correct as he made an appearance in the movie 'Spider-Man'.""")
-            elif c5 != 4:
-                    print(f"""The last asnwer was wrong.
-                        The right asnwer was Tobey Maguire as he made an apperance in 'Spider-Man'""")
-                    
-            print (f"""Congratulations {n},
-                    You have completed the General Knowledge section.
-                    Now that you are done, we have a small request for you from our side - 
-                    Do share this site with as many people as possible.
-                    """)
-            print(f"""Thank you and see you soon, {n} hopefully.""")
-            break
-
-        if s == 2:
-             print("You have opted for Science.")
-             s1 = input(f"""Q.1 The first question comes of Physics, one of the most basic and ground level topics of the subject.
-                        Newton discovered Gravity by seeing an appple falll on him. But we also say Newton's laws of Motion.
-                        How many laws of Motion has he scripted?
-                        1. 3
-                        2. 5
-                        3. 7
-                        4. 6                        
-                        """)
-             s2 = input(f"""Q.2 As much as our knowledge, there are 118 elements that make the periodic table up.
-                        But there have been studies of a 119th element. It is not permanantly fixed or known, but name its temporary name.
-                        1. Uranium
-                        2. Ununennium
-                        3. Nihonium
-                        4. Moskovi
-                        """)
-             s3 = input(f"""Even this is related to chemistry and the periodic table.
-                        The constant research of the elemants and chemicals to make the periodic table is conducted by a group.
-                        Name the group..
-                        1. IPAC
-                        2. IUPA
-                        3. PAC
-                        4. IUPAC                        
-                        """)
+    # This is where we keep track of the score
+    score = 0
+    # Here we are "enumerating", meaning we are giving a number to each element in the list, starting from 1 instead of 0
+    # By doing so, we get to map the respective question and the number
+    for i, q in enumerate(questions, 1):
+        print(f"\n{q['question']}") # Prints the questions
+        # Print all the answer options
+        for j, option in enumerate(q["options"], 1):
+            print(f"{j}. {option}")
 
 
+        # Here in this while true loop, we make sure that the value that the user gives is valid
+        while True:
+            try:
+                answer = int(input("Your answer (1-4): "))
+                if 1 <= answer <= 4:    # If the answer is valid, then continue to the next part
+                    break
+                else:
+                    print("Please enter a number between 1 and 4.")
+            except ValueError:
+                print("Please enter a valid number.")
 
-
-
-
-
+        # If the answer is the right answer, then increase the score
+        if answer == q["correct_answer"]:
+            print("Correct!")
+            score += 1
         else:
-            print("Sorry, this is invalid.")
-            t += 1
-        if t == m:
-            print("You have exceeded the maximum number of attempts.")
+            print(
+                f"Incorrect. The correct answer was: {q['options'][q['correct_answer']-1]}"
+            )
+
+    print(
+        f"\nCongratulations {player_name}! You have completed the Cricket quiz."
+    )
+    # Here we print the final score of the player
+    print(f"Your score: {score}/{len(questions)}")
+    print(f"Good work, {player_name}. At least you made the attempt of attempting.")
+    print("We hope to see you soon!")
+    print("Good Bye!")
+
+
+def Science(player_name):
+    print(f"Welcome to the Science Section, {player_name}.")    
+
+    questions = [
+        {
+            "question": "Q1. How many laws of motion were scripted by Newton?",
+            "options": ["3", "4", "5", "13"],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q2. What is the abbrevation of the group that researches the elements?",
+            "options": [
+                "IPAC",
+                "IUPA",
+                "IPAUC",
+                "IUPAC",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q3. How many official elements are present in the periodic table?",
+            "options": [
+                "117",
+                "118",
+                "119",
+                "158",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q4. Around how many taste buds does an average human have?",
+            "options": [
+                "25,000",
+                "2,50,000",
+                "2,500",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q5. Which is the substance within a bone that makes new cells constantly?",
+            "options": [
+                "Bone Substance",
+                "Bone Juice",
+                "Bone Mallow",
+                "Bone Marrow",
+            ],
+            "correct_answer": 4,
+        },
+    ]
+
+    score = 0
+    
+    for i, q in enumerate(questions, 1):
+        print(f"\n{q['question']}") 
+        for j, option in enumerate(q["options"], 1):
+            print(f"{j}. {option}")
+
+
+        while True:
+            try:
+                answer = int(input("Your answer (1-4): "))
+                if 1 <= answer <= 4:   
+                    break
+                else:
+                    print("Please enter a number between 1 and 4.")
+            except ValueError:
+                print("Please enter a valid number.")
+
+        if answer == q["correct_answer"]:
+            print("Correct!")
+            score += 1
+        else:
+            print(
+                f"Incorrect. The correct answer was: {q['options'][q['correct_answer']-1]}"
+            )
+
+    print(
+        f"\nCongratulations {player_name}! You have completed the Science quiz."
+    )
+    print(f"Your score: {score}/{len(questions)}")
+    print(f"Good work, {player_name}. At least you made the attempt of attempting.")
+    print("We hope to see you soon!")
+    print("Good Bye!")
+
+def Space(player_name):
+    print(f"Welcome to the Space Section, {player_name}.")    
+
+    questions = [
+        {
+            "question": "Q1. In which year was Pluto stopped to be considered a normal planet?",
+            "options": ["2006", "2007", "2009", "2004"],
+            "correct_answer": 3,
+        },
+        {
+            "question": "Q2. Which is the closest galaxy to the Milkyway?",
+            "options": [
+                "Andromeda",
+                "Andrimica",
+                "Creamyway",
+                "None of the Above",
+            ],
+              "correct_answer": 1,
+        },
+        {
+            "question": "Q3. How are the shapes of the orbits of the planets?",
+            "options": [
+                "Round",
+                "Elliptical",
+                "Square",
+                "Spherical",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q4. What happened to the first person to say 'The planets revolve around the Earth'?",
+            "options": [
+                "Welcomed",
+                "Burnt",
+                "Traumatised",
+                "Appreciated",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q5.  Which was the project launched to our Solar body by India?",
+            "options": [
+                "Surya L-1",
+                "Surya 3",
+                "Aditya 11",
+                "Aditya L-1",
+            ],
+            "correct_answer": 4,
+        },
+    ]
+
+    score = 0
+    
+    for i, q in enumerate(questions, 1):
+        print(f"\n{q['question']}") 
+        for j, option in enumerate(q["options"], 1):
+            print(f"{j}. {option}")
+
+
+        while True:
+            try:
+                answer = int(input("Your answer (1-4): "))
+                if 1 <= answer <= 4:   
+                    break
+                else:
+                    print("Please enter a number between 1 and 4.")
+            except ValueError:
+                print("Please enter a valid number.")
+
+        if answer == q["correct_answer"]:
+            print("Correct!")
+            score += 1
+        else:
+            print(
+                f"Incorrect. The correct answer was: {q['options'][q['correct_answer']-1]}"
+            )
+
+    print(
+        f"\nCongratulations {player_name}! You have completed the Space quiz."
+    )
+    print(f"Your score: {score}/{len(questions)}")
+    print(f"Good work, {player_name}. At least you made the attempt of attempting.")
+    print("We hope to see you soon!")
+    print("Good Bye!")
+
+
+def GK(player_name):
+    print(f"Welcome to the General Knowledge Section, {player_name}.")    
+
+    questions = [
+        {
+            "question": "Q1. Who was the American politician shot in the ear recently?",
+            "options": ["Donald Trump", "Kamala Harris", "Joe Biden", "Rishi Sunak"],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q2. Which is one of the rare metals discovered in Sutlej?",
+            "options": [
+                "Titanium",
+                "Manganese",
+                "Tantalum",
+                "Magnesium",
+            ],
+              "correct_answer": 3,
+        },
+        {
+            "question": "Q3. When does India bid to hold the Olympics?",
+            "options": [
+                "2028",
+                "2036",
+                "2040",
+                "2048",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q4. Which recent Prabhas starrer became a huge international success?",
+            "options": [
+                "Pushpa : The Rise",
+                "Pushpa : The Rule",
+                "Saaho",
+                "Kalki 2898 AD",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q5.  Who acted as Peter Parker for the first time in early 2000's?",
+            "options": [
+                "Tom Holland",
+                "Andrew Garfield",
+                "Tobey Maguire",
+                "None of the Above",
+            ],
+            "correct_answer": 3,
+        },
+    ]
+
+    score = 0
+    
+    for i, q in enumerate(questions, 1):
+        print(f"\n{q['question']}") 
+        for j, option in enumerate(q["options"], 1):
+            print(f"{j}. {option}")
+
+
+        while True:
+            try:
+                answer = int(input("Your answer (1-4): "))
+                if 1 <= answer <= 4:   
+                    break
+                else:
+                    print("Please enter a number between 1 and 4.")
+            except ValueError:
+                print("Please enter a valid number.")
+
+        if answer == q["correct_answer"]:
+            print("Correct!")
+            score += 1
+        else:
+            print(
+                f"Incorrect. The correct answer was: {q['options'][q['correct_answer']-1]}"
+            )
+
+    print(
+        f"\nCongratulations {player_name}! You have completed the General Knowledge quiz."
+    )
+    print(f"Your score: {score}/{len(questions)}")
+    print(f"Good work, {player_name}. At least you made the attempt of attempting.")
+    print("We hope to see you soon!")
+    print("Good Bye!")
+
+def main():
+    print("Welcome to C-GEKSS Quizzer!")
+    print("Your quizzing pal for Cricket, General Knowledge, Space and Science!")
+
+    player_name = input("Enter your name here participant: ")
+    print(f"Hello {player_name}. Welcome to the C-GEKSS Quiz")
+    print(
+        "The rules are simple: A question will be printed on the screen and you have to answer by typing 1, 2, 3, or 4 for the respective options"
+    )
+
+    while True:
+        try:
+            # Here we are taking the input from the user to see what the user wants to play
+            s = int(
+                input(
+                    "What do you want to be quizzed on today?\n1. Cricket\n2. Science\n3. Space\n4. General Knowledge (1-4): "
+                )
+            )
+            if 1 <= s <= 4:
+                break
+            else:
+                print("Please enter a number between 1 and 4.")
+        except ValueError:
+            print("Please enter a valid number.")
+
+
+
+    # When you do implement the functions for the Science Quiz and the Space Quiz, fill them here exactly how I have done it
+    if s == 1:
+        cricket(player_name)
+    elif s == 2:
+        Science(player_name)
+    elif s == 3:
+        Space(player_name)
+    elif s == 4:
+        GK(player_name)
+    
+
+if __name__ == "__main__":
+    main()
+
