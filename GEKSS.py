@@ -52,6 +52,15 @@ def cricket(player_name):
             ],
             "correct_answer": 4,
         },
+        {
+            "question": "Q6. Which is the most celebrated national cricket league?",
+            "options": [
+                "Indian Premier League (IPL)",
+                "Pakistan Premier League (PPL)",
+                "County Cricket",
+                "None of the above",
+            ],
+            
     ]
 
     # This is where we keep track of the score
