@@ -60,7 +60,48 @@ def cricket(player_name):
                 "County Cricket",
                 "None of the above",
             ],
-            
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q7. Which is the team that has won the most number of ODI World cups",
+            "options": [
+                "India",
+                "Australia",
+                "West Indies",
+                "England",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q8. Who became the first Indian to take a U-Turn from retirement to play for an overseas league?",
+            "options": [
+                "Dinesh Karthik",
+                "Mahendra SIngh Dhoni",
+                "Sachin Tendulkar",
+                "Gautam Gambhir",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q9. If the ball is turned by a pacer in the moment of release to move the ball after pitching, what is it called?",
+            "options": [
+                "Swing",
+                "Turn",
+                "Stock",
+                "Cutter",
+            ],
+            "correct_answer": 4,
+        }
+        {
+            "question": "Q10. What is the position known behind the bowler to his left side in the deep for a right-hand batter?",
+            "options": [
+                "Long-On",
+                "Deep Midwicket",
+                "Third-Man",
+                "Long-Off",
+            ]
+            "correct_answer": 4,
+        }
     ]
 
     # This is where we keep track of the score
