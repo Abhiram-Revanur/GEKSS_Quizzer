@@ -329,6 +329,56 @@ def Space(player_name):
             ],
             "correct_answer": 4,
         },
+        {
+            "question": "Q6. The Karman Line is how many kilometers from the earth's surface?",
+            "'options": [
+                "250",
+                "100",
+                "50",
+                "1000",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q7. Which of the following have no moons in our solar system?",
+            "options": [
+                "Mercury",
+                "Venus",
+                "Both",
+                "Neptune",
+            ],
+            "correct_answer": 3,
+        },
+        {
+            "question": "Q8. What type of star is the sun?",
+            "options": [
+                "Average",
+                "Below average",
+                "Small",
+                "Big",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "questions": "Q9. Sunsets on Mars appear in which colour?",
+            "options": [
+                "Blue",
+                "Orange",
+                "Green",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q10. Which planet has the most moons?",
+            "options": [
+                "Mars",
+                "Jupiter",
+                "Uranus",
+                "None of the above",
+            ],
+            "correct_answer": 2,
+        },
     ]
 
     score = 0
