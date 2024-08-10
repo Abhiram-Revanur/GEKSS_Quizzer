@@ -465,6 +465,56 @@ def GK(player_name):
             ],
             "correct_answer": 3,
         },
+        {
+            "questions": "Q6. When did the modern olympic games take place for thr first time?",
+            "options": [
+                "1986",
+                "1896",
+                "550 BCE",
+                "None of the above",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q7. Lake Turkana, recently seen in the news, is located in which country?",
+            "options": [
+                "Kenya",
+                "Nigeria",
+                "Russia",
+                "Egypt",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q8. On Aug 8, which state made its first 'Grain ATM' used to improve food quality?",
+            "options": [
+                "Karnataka",
+                "Rajasthan",
+                "West Bengal",
+                "Odisha",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q9. The GRB (Great Barrier Reef) is facing its highest temperatures in around how many years?",
+            "options": [
+                "400",
+                "250",
+                "780",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q10. Recently, which state government has approved Logistic Policy 2024 to create five lakhs job opportunities?",
+            "options": [
+                "Assam",
+                "Uttar Pradesh",
+                "Karnataka",
+                "Maharashtra",
+            ],
+            "correct_answer": 4,
+        },
     ]
 
     score = 0
