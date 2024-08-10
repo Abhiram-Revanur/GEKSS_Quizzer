@@ -194,6 +194,56 @@ def Science(player_name):
             ],
             "correct_answer": 4,
         },
+        {
+            "question": "Q6. Did you know that if you swallowed a blade, it would melt within your stomach? Name the acid that aids this.",
+            "options": [
+                "Hydrochloric Acid",
+                "Baking Soda",
+                "Bile Juice",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q7. What is liquid that can trap a laser?",
+            "options": [
+                "Orange Juice",
+                "Bile Juice",
+                "Blood",
+                "Water",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "questions": "Q8. What is the hugest provider of oxygen in the world?",
+            "options": [
+                "Rainforests",
+                "Oceans",
+                "Grass",
+                "Factories",
+            ]
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q9. With the help of what do aquatic animals navigate around to their homes?",
+            "options": [
+                "Gravitational Force",
+                "Magnetic Force",
+                "Magnetic Field of Earth",
+                "None of the above",
+            ],
+            "correct_answer": 3,
+        },
+        {
+            "question": "Q10. How much can a cloud weigh?",
+            "options": [
+                "A few pounds",
+                "A million pounds",
+                "A few hundred pounds",
+                "A few thousand pounds",
+            ],
+            "correct_answer": 2,
+        },
     ]
 
     score = 0
