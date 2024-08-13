@@ -1,12 +1,10 @@
+from flask import Flask, render_template, request, redirect, url_for
 
-# This is where we start our general Knowledge questions
-def cricket(player_name):
-    print(f"Welcome to the Cricket Section, {player_name}.")    
+app = Flask(__name__)
 
-    # Here is the list of questions, options and the right answer
-    # If you want to add more questions, then follow the same format as the below questions
 
-    questions = [
+QUIZZES = {
+    "cricket": [
         {
             "question": "Q1. When did India first win the T20 World Cup?",
             "options": ["2007", "2011", "1983", "2017"],
@@ -91,7 +89,7 @@ def cricket(player_name):
                 "Cutter",
             ],
             "correct_answer": 4,
-        }
+        },
         {
             "question": "Q10. What is the position known behind the bowler to his left side in the deep for a right-hand batter?",
             "options": [
@@ -99,56 +97,61 @@ def cricket(player_name):
                 "Deep Midwicket",
                 "Third-Man",
                 "Long-Off",
-            ]
+            ],
             "correct_answer": 4,
-        }
-    ]
-
-    # This is where we keep track of the score
-    score = 0
-    # Here we are "enumerating", meaning we are giving a number to each element in the list, starting from 1 instead of 0
-    # By doing so, we get to map the respective question and the number
-    for i, q in enumerate(questions, 1):
-        print(f"\n{q['question']}") # Prints the questions
-        # Print all the answer options
-        for j, option in enumerate(q["options"], 1):
-            print(f"{j}. {option}")
-
-
-        # Here in this while true loop, we make sure that the value that the user gives is valid
-        while True:
-            try:
-                answer = int(input("Your answer (1-4): "))
-                if 1 <= answer <= 4:    # If the answer is valid, then continue to the next part
-                    break
-                else:
-                    print("Please enter a number between 1 and 4.")
-            except ValueError:
-                print("Please enter a valid number.")
-
-        # If the answer is the right answer, then increase the score
-        if answer == q["correct_answer"]:
-            print("Correct!")
-            score += 1
-        else:
-            print(
-                f"Incorrect. The correct answer was: {q['options'][q['correct_answer']-1]}"
-            )
-
-    print(
-        f"\nCongratulations {player_name}! You have completed the Cricket quiz."
-    )
-    # Here we print the final score of the player
-    print(f"Your score: {score}/{len(questions)}")
-    print(f"Good work, {player_name}. At least you made the attempt of attempting.")
-    print("We hope to see you soon!")
-    print("Good Bye!")
-
-
-def Science(player_name):
-    print(f"Welcome to the Science Section, {player_name}.")    
-
-    questions = [
+        },
+        {
+            "question": "Q11. After how many years has Sri Lanka beaten India in a bilateral ODI-series?",
+            "options": [
+                "27",
+                "28",
+                "29",
+                "21",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q12. What is the full-form of the famous Australian cricket ground SCG?",
+            "options": [
+                "Scorchers Cricket Ground",
+                "Samurai Cricket Ground",
+                "Southern Cricket Ground",
+                "Sydney Cricket Ground",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q13. Which ground is known as the home of cricket?",
+            "options": [
+                "Oval",
+                "Lords",
+                "Wankhade Stadium",
+                "Gods",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q14. The first cricket match was played 180 years ago between which two countries?",
+            "options": [
+                "England and Australia",
+                "Australia and West Indies",
+                "England and South Africa",
+                "USA and Canada",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q15. WHen were the first laws of cricket published?",
+            "options": [
+                "2014",
+                "1679",
+                "1744",
+                "1771",
+            ],
+            "correct_answer": 3,
+        },
+    ],
+    "science": [
         {
             "question": "Q1. How many laws of motion were scripted by Newton?",
             "options": ["3", "4", "5", "13"],
@@ -205,7 +208,7 @@ def Science(player_name):
             "correct_answer": 1,
         },
         {
-            "question": "Q7. What is liquid that can trap a laser?",
+            "question": "Q7. What is the liquid that can trap a laser?",
             "options": [
                 "Orange Juice",
                 "Bile Juice",
@@ -215,13 +218,13 @@ def Science(player_name):
             "correct_answer": 4,
         },
         {
-            "questions": "Q8. What is the hugest provider of oxygen in the world?",
+            "question": "Q8. What is the hugest provider of oxygen in the world?",
             "options": [
                 "Rainforests",
                 "Oceans",
                 "Grass",
                 "Factories",
-            ]
+            ],
             "correct_answer": 2,
         },
         {
@@ -244,46 +247,58 @@ def Science(player_name):
             ],
             "correct_answer": 2,
         },
-    ]
-
-    score = 0
-    
-    for i, q in enumerate(questions, 1):
-        print(f"\n{q['question']}") 
-        for j, option in enumerate(q["options"], 1):
-            print(f"{j}. {option}")
-
-
-        while True:
-            try:
-                answer = int(input("Your answer (1-4): "))
-                if 1 <= answer <= 4:   
-                    break
-                else:
-                    print("Please enter a number between 1 and 4.")
-            except ValueError:
-                print("Please enter a valid number.")
-
-        if answer == q["correct_answer"]:
-            print("Correct!")
-            score += 1
-        else:
-            print(
-                f"Incorrect. The correct answer was: {q['options'][q['correct_answer']-1]}"
-            )
-
-    print(
-        f"\nCongratulations {player_name}! You have completed the Science quiz."
-    )
-    print(f"Your score: {score}/{len(questions)}")
-    print(f"Good work, {player_name}. At least you made the attempt of attempting.")
-    print("We hope to see you soon!")
-    print("Good Bye!")
-
-def Space(player_name):
-    print(f"Welcome to the Space Section, {player_name}.")    
-
-    questions = [
+        {
+            "question": "Q11. Botany is the study of ",
+            "options": [
+                "Organisms",
+                "Motion",
+                "Creation",
+                "Plants",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q12. What are the three-dimensions?",
+            "options": [
+                "Length, breadth, and weight",
+                "Length, height and weight",
+                "Length, width and breadth",
+                "None of the above",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q13. What is the process of rain in the water cycle known as?",
+            "options": [
+                "Precipitation",
+                "Drizzling",
+                "Raining",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q14. Sound waves travel through the help of ",
+            "options": [
+                "Water",
+                "Air",
+                "Oceans",
+                "None of the above",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q15. Milk turns to curd due to ",
+            "options": [
+                "Microbes",
+                "Water",
+                "Air",
+                "Exposure",
+            ],
+            "correct_answer": 1,
+        },
+    ],
+    "space": [
         {
             "question": "Q1. In which year was Pluto stopped to be considered a normal planet?",
             "options": ["2006", "2007", "2009", "2004"],
@@ -297,7 +312,7 @@ def Space(player_name):
                 "Creamyway",
                 "None of the Above",
             ],
-              "correct_answer": 1,
+            "correct_answer": 1,
         },
         {
             "question": "Q3. How are the shapes of the orbits of the planets?",
@@ -310,7 +325,7 @@ def Space(player_name):
             "correct_answer": 2,
         },
         {
-            "question": "Q4. What happened to the first person to say 'The planets revolve around the Earth'?",
+            "question": "Q4. What did people do to Nicolaus Copernicus when he said, 'The sun doesn't revolve around the earth, but the earth revolves around the sun?'",
             "options": [
                 "Welcomed",
                 "Burnt",
@@ -331,7 +346,7 @@ def Space(player_name):
         },
         {
             "question": "Q6. The Karman Line is how many kilometers from the earth's surface?",
-            "'options": [
+            "options": [
                 "250",
                 "100",
                 "50",
@@ -360,7 +375,7 @@ def Space(player_name):
             "correct_answer": 1,
         },
         {
-            "questions": "Q9. Sunsets on Mars appear in which colour?",
+            "question": "Q9. Sunsets on Mars appear in which colour?",
             "options": [
                 "Blue",
                 "Orange",
@@ -379,47 +394,58 @@ def Space(player_name):
             ],
             "correct_answer": 2,
         },
-    ]
-
-    score = 0
-    
-    for i, q in enumerate(questions, 1):
-        print(f"\n{q['question']}") 
-        for j, option in enumerate(q["options"], 1):
-            print(f"{j}. {option}")
-
-
-        while True:
-            try:
-                answer = int(input("Your answer (1-4): "))
-                if 1 <= answer <= 4:   
-                    break
-                else:
-                    print("Please enter a number between 1 and 4.")
-            except ValueError:
-                print("Please enter a valid number.")
-
-        if answer == q["correct_answer"]:
-            print("Correct!")
-            score += 1
-        else:
-            print(
-                f"Incorrect. The correct answer was: {q['options'][q['correct_answer']-1]}"
-            )
-
-    print(
-        f"\nCongratulations {player_name}! You have completed the Space quiz."
-    )
-    print(f"Your score: {score}/{len(questions)}")
-    print(f"Good work, {player_name}. At least you made the attempt of attempting.")
-    print("We hope to see you soon!")
-    print("Good Bye!")
-
-
-def GK(player_name):
-    print(f"Welcome to the General Knowledge Section, {player_name}.")    
-
-    questions = [
+        {
+            "question": "Q11. The speciality of the Chandrayaan-3 mission was that it ",
+            "options": [
+                "Landed on the other side of the moon",
+                "Discovered human skeletons",
+                "Crash landed but was still functional",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q12. Nothing can escape a black hole due to the fact that it has a huge ",
+            "options": [
+                "Space",
+                "Gravitational pull",
+                "Magnetic pull",
+                "Magnetic field",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q13. What are groups of stars in our sky called?",
+            "options": [
+                "Satellites",
+                "Star Groups",
+                "Karman",
+                "None of the above",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question": "Q14. What is the top-most layer in our atmosphere known as?",
+            "options": [
+                "Stratosphere",
+                "Exosphere",
+                "Outo-sphere",
+                "Outersphere",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question": "Q15. Which is the disc shaped ring outside Neptune around 30 Astronomical Units (AU)?",
+            "options": [
+                "Asteroid Belt",
+                "Helio Pause",
+                "Kuiper Belt",
+                "None of the above",
+            ],
+            "correct_answer": 3,
+        },
+    ],
+    "gk": [
         {
             "question": "Q1. Who was the American politician shot in the ear recently?",
             "options": ["Donald Trump", "Kamala Harris", "Joe Biden", "Rishi Sunak"],
@@ -433,7 +459,7 @@ def GK(player_name):
                 "Tantalum",
                 "Magnesium",
             ],
-              "correct_answer": 3,
+            "correct_answer": 3,
         },
         {
             "question": "Q3. When does India bid to hold the Olympics?",
@@ -466,7 +492,7 @@ def GK(player_name):
             "correct_answer": 3,
         },
         {
-            "questions": "Q6. When did the modern olympic games take place for thr first time?",
+            "question": "Q6. When did the modern olympic games take place for thr first time?",
             "options": [
                 "1986",
                 "1896",
@@ -496,7 +522,7 @@ def GK(player_name):
             "correct_answer": 4,
         },
         {
-            "question": "Q9. The GRB (Great Barrier Reef) is facing its highest temperatures in around how many years?",
+            "question": "Q9. The GBR (Great Barrier Reef) is facing its highest temperatures in around how many years?",
             "options": [
                 "400",
                 "250",
@@ -515,80 +541,86 @@ def GK(player_name):
             ],
             "correct_answer": 4,
         },
-    ]
+        {
+            "question": "Q11. Where is India conducting the 'Parvat Prahaar' Military Exercise?",
+            "options": [
+                "Tibet",
+                "Nepal",
+                "Ladakh",
+                "Punjab",
+            ],
+        "correct_answer": 3,
+        },
+        {
+            "question": "Q12. Among which two countries is the Mahakali River a border according to the 1816 treaty of Sugauli?",
+            "options": [
+                "India and Bhutan",
+                "Bhutan and Nepal",
+                "India and Nepal",
+                "None of the above",
+            ],
+            "correct_answer": 3,
+        },
+        {
+            "question": "Q13. Which is the first state to adopt the Disaster Insurance?",
+            "options": [
+                "Nagaland",
+                "Maharashtra",
+                "Tamil Nadu",
+                "Kerala",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question": "Q14. Which state Chief Minister has been awarded the Lee Kuan Yew Exchange Fellowship?",
+            "options": [
+                "West Bengal",
+                "Bihar",
+                "Assam",
+                "None of the above",
+            ],
+            "correct_answer": 3,
+        },
+        {
+            "question": "Q15. Swati Nayak, who was in the news, has won which award?",
+            "options": [
+                "Norman E. Borlaug award",
+                "Booker award",
+                "Jnana Peetha award",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+    ],
+}
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/quiz/<category>', methods=['GET', 'POST'])
+def quiz(category):
+    if category not in QUIZZES:
+        return redirect(url_for('index'))
+    
+    questions = QUIZZES[category]
     score = 0
-    
-    for i, q in enumerate(questions, 1):
-        print(f"\n{q['question']}") 
-        for j, option in enumerate(q["options"], 1):
-            print(f"{j}. {option}")
-
-
-        while True:
-            try:
-                answer = int(input("Your answer (1-4): "))
-                if 1 <= answer <= 4:   
-                    break
-                else:
-                    print("Please enter a number between 1 and 4.")
-            except ValueError:
-                print("Please enter a valid number.")
-
-        if answer == q["correct_answer"]:
-            print("Correct!")
-            score += 1
-        else:
-            print(
-                f"Incorrect. The correct answer was: {q['options'][q['correct_answer']-1]}"
-            )
-
-    print(
-        f"\nCongratulations {player_name}! You have completed the General Knowledge quiz."
-    )
-    print(f"Your score: {score}/{len(questions)}")
-    print(f"Good work, {player_name}. At least you made the attempt of attempting.")
-    print("We hope to see you soon!")
-    print("Good Bye!")
-
-def main():
-    print("Welcome to C-GEKSS Quizzer!")
-    print("Your quizzing pal for Cricket, General Knowledge, Space and Science!")
-
-    player_name = input("Enter your name here participant: ")
-    print(f"Hello {player_name}. Welcome to the C-GEKSS Quiz")
-    print(
-        "The rules are simple: A question will be printed on the screen and you have to answer by typing 1, 2, 3, or 4 for the respective options"
-    )
-
-    while True:
-        try:
-            # Here we are taking the input from the user to see what the user wants to play
-            s = int(
-                input(
-                    "What do you want to be quizzed on today?\n1. Cricket\n2. Science\n3. Space\n4. General Knowledge (1-4): "
-                )
-            )
-            if 1 <= s <= 4:
-                break
+    incorrect_answers = []
+    if request.method == "POST":
+        for question in questions:
+            answer = request.form.get(f"question_{question['question']}")
+            if answer and int(answer) == question['correct_answer']:
+                score += 1
             else:
-                print("Please enter a number between 1 and 4.")
-        except ValueError:
-            print("Please enter a valid number.")
-
-
-
-    # When you do implement the functions for the Science Quiz and the Space Quiz, fill them here exactly how I have done it
-    if s == 1:
-        cricket(player_name)
-    elif s == 2:
-        Science(player_name)
-    elif s == 3:
-        Space(player_name)
-    elif s == 4:
-        GK(player_name)
+                incorrect_answers.append({
+                    'question': question['question'],
+                    'user_answer': question['options'][int(answer)-1] if answer else "Not answered",
+                    'correct_answer': question['options'][question['correct_answer']-1]
+                })
+        
+        return render_template('results.html', score=score, total=len(questions), category=category, incorrect_answers=incorrect_answers)
     
+    return render_template('quiz.html', questions=questions, category=category)
 
 if __name__ == "__main__":
-    main()
-
+    app.run(debug=True)
