@@ -141,7 +141,7 @@ QUIZZES = {
             "correct_answer": 4,
         },
         {
-            "question": "Q15. WHen were the first laws of cricket published?",
+            "question": "Q15. When were the first laws of cricket published?",
             "options": [
                 "2014",
                 "1679",
@@ -591,6 +591,158 @@ QUIZZES = {
             ],
             "correct_answer": 1,
         },
+    ],
+    "Defence" : [
+        {
+            "question" : "Q1. Where is the first 'Indian Air Force Heritage Museum' located in India?",
+            "options" : [
+                "Chandigarh",
+                "Bangalore",
+                "Chennai",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question" : "Q2. How many seats are reserved in NDA for Naval Cadets?",
+            "options" : [
+                "48",
+                "72",
+                "42",
+                "108",
+            ],
+            "correct_answer": 3,
+        },
+        {
+            "question" : "Q3. Where is the Officers' Training Academy located?",
+            "options" : [
+                "Pune",
+                "Bombay",
+                "Bangalore",
+                "Chennai",
+            ],
+            "correct_answer": 4,
+        },
+        {
+            "question" : "Q4. How long is the corse at the Officer's Training Academy?",
+            "options" : [
+                "5 Weeks",
+                "49 Weeks",
+                "40 Weeks",
+                "None of the above",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question" : "Q5. 'Bharat Drone Shakti Exhibition 2023' was inaugurated in which state?",
+            "options" : [
+                "Telangana",
+                "Uttar Pradesh",
+                "Andhra Pradesh",
+                "Himachal Pradesh",
+            ],
+            "correct_answer": 2,
+        },
+        {
+            "question" : "Q6. What is the motto of Indian Army?",
+            "options" : [
+                "Seva Paramo Dharm",
+                "Self before Service",
+                "Nation first",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question" : "Q7. Who inaugurated the Bharat Drone Shakti exhibition 2023?",
+            "options" : [
+                "Defence Minister - Rajnath Singh",
+                "Finance Minister - Nirmala Sitharaman",
+                "Prime Minister - Narendra Modi",
+                "President - Draupadi Murmu",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question" : "Q8. Which was the search and rescue mission by India to Syria and Turkey after the earthquake in 2023?",
+            "options" : [
+                "Operation Earthquake",
+                "Operation Vijay",
+                "Operation Dost",
+                "Operation Rakshak",
+            ],
+            "correct_answer": 3,
+        },
+        {
+            "question" : "Q9. Which was the first war India fought post independence for itself?",
+            "options" : [
+                "1947 Indo-Pak War",
+                "1946 Indo-Sino War",
+                "1962 Indo-Sino War",
+                "None of the above",
+            ],
+            "correct_answer": 1,
+        },
+        {
+            "question" : "Q10. Operation Gibraltar was launched by which country against India?",
+            "options" : [
+                "China",
+                "Pakistan",
+                "Saudi Arabia",
+                "Japan",
+            ],
+            "correct_answer" : 2,
+        },
+        {
+            "question" : "Q11. What is the name of the border that India shares with China?",
+            "options" : [
+                "Line Of Control (LOC)",
+                "Line of Actual Control (LAC)",
+                "The Great Wall",
+                "None of the above",
+            ],
+            "correct_answer" : 2,
+        },
+        {
+            "question" : "Q12. When was operation Sajag launched?",
+            "options" : [
+                "24 January 2021",
+                "4 October 2021",
+                "5 November 2021",
+                "None of the above",
+            ],
+            "correct_answer" : 2,
+        },
+        {
+            "question" : "Q13. Which force launched Operation Meghdoot?",
+            "options" : [
+                "Indian Air Force",
+                "Indian Army",
+                "Indian Navy",
+                "Para SF Forces of India",
+            ],
+            "correct_answer" : 1,
+        },
+        {
+            "question" : "Q14. Which was the operation launched by Indian Navy in 1971?",
+            "options" : [
+                "Operation Trident",
+                "Operation Meghdoot",
+                "Operation Vijay",
+                "None of the above?",
+            ],
+            "correct_asnwer" : 1,
+        },
+        {
+            "question" : "Q15. Which is the war also known as the 'Bangladesh Liberation War'?",
+            "options" : [
+                "1965 Indo-Sino war",
+                "1962 Indo-Sino war",
+                "1971 Indo-Pak war",
+                "None of the above",
+            ],
+            "correct_answer" : 3,
+        }
     ],
 }
 
